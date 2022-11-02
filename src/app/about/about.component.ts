@@ -1,5 +1,14 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { concat, fromEvent, interval, noop, Observable, of, timer } from "rxjs";
+import {
+  concat,
+  fromEvent,
+  interval,
+  merge,
+  noop,
+  Observable,
+  of,
+  timer,
+} from "rxjs";
 import { map } from "rxjs/operators";
 import { createHttpObseravle } from "../common/util";
 
@@ -12,7 +21,7 @@ export class AboutComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    const source1$ = of(1, 2, 3);
+    /*     const source1$ = of(1, 2, 3);
 
     const source2$ = of(4, 5, 6);
 
@@ -20,6 +29,18 @@ export class AboutComponent implements OnInit {
 
     const result$ = concat(source1$, source2$, source3$);
 
-    result$.subscribe(console.log);
+    result$.subscribe(console.log); */
+    /*     const interval1$ = interval(1000);
+
+    const interval2$ = interval1$.pipe(map((val) => 10 * val));
+
+    const result$ = merge(interval1$, interval2$);
+
+    result$.subscribe(console.log); */
+    /*     const http$ = createHttpObseravle("api/courses");
+
+    const sub = http$.subscribe(console.log);
+
+    setTimeout(() => sub.unsubscribe(), 0); */
   }
 }
